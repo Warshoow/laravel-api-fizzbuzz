@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 class FizzBuzzController extends Controller
 {
     public function fizzbuzz() {
-        return response('FizzBuzz', 200)
-            ->header('Content-Type', 'text/plain');
+        return response()->json([
+            'data' => 'FizzBuzz',
+            'status' => 200,
+            'success' => true,
+            'timestamp' => now()->toISOString()
+        ])
+            ->header('Content-Type', 'application/json');
     }
 }
