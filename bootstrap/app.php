@@ -13,6 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Adding middleware on every route, optional
         // $middleware->append(EnsureApiKey::class);
         // $middleware->append(ErrorManager::class);
     })
